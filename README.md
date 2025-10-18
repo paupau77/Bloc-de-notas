@@ -55,6 +55,7 @@ BlocNotas/ ├── Index.html ├── Styles.css ├── App.js └── 
 ## 🧑‍💻💖 Autora
 
 Pau 💚
+
 Desarrolladora✨
 
 
@@ -62,7 +63,8 @@ Desarrolladora✨
 
 ## 🪪 Licencia
 
-Mi proyecto está bajo la licencia MIT — podés usarlo, modificarlo y compartirlo libremente.
+Mi proyecto está bajo la licencia MIT
+ — podés usarlo, modificarlo y compartirlo libremente.
 
 
 ---
