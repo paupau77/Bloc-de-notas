@@ -52,7 +52,7 @@ BlocNotas/ ├── Index.html ├── Styles.css ├── App.js └── 
 
 ---
 
-## 🧑‍💻 Autor
+## 🧑‍💻💖 Autora
 
 Pau 💚
 Desarrolladora✨
