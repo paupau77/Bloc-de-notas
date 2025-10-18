@@ -64,6 +64,7 @@ Desarrolladora✨
 ## 🪪 Licencia
 
 Mi proyecto está bajo la licencia MIT
+
  — podés usarlo, modificarlo y compartirlo libremente.
 
 
