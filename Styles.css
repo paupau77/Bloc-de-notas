@@ -1,0 +1,284 @@
+:root {
+  --bg: #18181b;
+  --accent: #00e0d3;
+  --text: #f1f5f9;
+  --header: #232336;
+  --textarea: #232336;
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.22);
+  --note-active: #00e0d3;
+  --note-hover: #22223a;
+}
+body {
+  background: linear-gradient(120deg, #232336 0%, #18181b 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Fira Mono', monospace, 'Courier New', Courier, monospace;
+  color: var(--text);
+  transition: background 0.4s;
+}
+.container {
+  max-width: 960px;
+  margin: 32px auto;
+  background: var(--bg);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+header {
+  background: var(--header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 12px 24px;
+  border-bottom: 2px solid var(--accent);
+}
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.header-actions button {
+  background: transparent;
+  color: var(--accent);
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+  outline: none;
+}
+.header-actions button:hover {
+  color: #fff;
+  transform: scale(1.15);
+}
+main {
+  display: flex;
+  flex: 1;
+  min-height: 480px;
+}
+aside {
+  width: 220px;
+  background: #18181b;
+  border-right: 1.5px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+}
+.note-list-header {
+  display: flex;
+  align-items: center;
+  padding: 18px 18px 8px 18px;
+  border-bottom: 1px solid var(--accent);
+  gap: 8px;
+  background: #18181b;
+}
+#searchNotes {
+  flex: 1;
+  padding: 7px 10px;
+  font-size: 1rem;
+  border-radius: 9px;
+  border: 1px solid var(--accent);
+  background: #232336;
+  color: var(--text);
+  outline: none;
+  transition: border 0.2s;
+}
+#searchNotes:focus {
+  border-color: var(--note-active);
+}
+#newNoteBtn {
+  background: var(--accent);
+  border: none;
+  font-size: 1.15rem;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  color: #232336;
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s;
+  outline: none;
+}
+#newNoteBtn:hover {
+  background: #fff;
+  color: var(--accent);
+}
+#notesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  background: #18181b;
+}
+#notesList li {
+  padding: 13px 18px;
+  border-bottom: 1px solid #232336;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.23s, color 0.23s;
+  font-size: 1.05rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+#notesList li.active {
+  background: var(--note-active);
+  color: #18181b;
+  font-weight: bold;
+  border-radius: 0 16px 16px 0;
+}
+#notesList li:hover:not(.active) {
+  background: var(--note-hover);
+}
+#notesList li .rename-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.1em;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+#notesList li .rename-btn:hover {
+  opacity: 1;
+}
+.editor-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  min-width: 0;
+}
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px 8px 24px;
+  border-bottom: 1px solid var(--accent);
+  gap: 8px;
+  background: var(--bg);
+}
+#noteTitle {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid var(--accent);
+  background: transparent;
+  color: var(--text);
+  padding: 7px 10px;
+  border-radius: 7px 7px 0 0;
+  outline: none;
+  transition: border 0.23s;
+}
+#noteTitle:focus {
+  border-color: var(--note-active);
+}
+.editor-actions button {
+  background: transparent;
+  color: var(--accent);
+  border: none;
+  font-size: 1.25rem;
+  margin-left: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.22s, color 0.22s, transform 0.13s;
+  outline: none;
+  padding: 4px 8px;
+}
+.editor-actions button:hover {
+  background: var(--accent);
+  color: #232336;
+  transform: scale(1.17);
+}
+#noteArea {
+  flex: 1;
+  resize: none;
+  padding: 22px 24px;
+  min-height: 180px;
+  font-size: 1.18rem;
+  background: var(--textarea);
+  border: none;
+  color: var(--text);
+  outline: none;
+  font-family: inherit;
+  transition: background 0.3s;
+  border-radius: 0 0 20px 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.97rem;
+  color: #cbd5e1;
+  padding: 8px 24px 15px 24px;
+  background: transparent;
+}
+footer {
+  background: transparent;
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  text-align: right;
+  color: #6ee7b7;
+}
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #232336;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+/* Tema claro */
+body.light {
+  --bg: #f3f4f6;
+  --accent: #00bfae;
+  --text: #232336;
+  --header: #e5e7eb;
+  --textarea: #fff;
+  --shadow: 0 4px 24px 0 rgba(0, 191, 174, 0.11);
+  --note-active: #00bfae;
+  --note-hover: #e1e7ed;
+}
+body.light #notesList li.active {
+  color: #fff;
+}
+body.light #notesList li:hover:not(.active) {
+  color: #232336;
+}
+/* Animación de entrada */
+.container,
+#notesList li,
+.editor-section {
+  animation: fadein 0.75s;
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(64px);}
+  to { opacity: 1; transform: none;}
+}
+@media (max-width: 820px) {
+  .container { max-width: 100vw; }
+  main { flex-direction: column; }
+  aside { width: 100vw; border-right: none; border-bottom: 2px solid var(--accent); }
+  .editor-section { border-radius: 0 0 20px 20px; }
+  .editor-toolbar { padding: 16px 10px 8px 10px; }
+  #noteArea { padding: 14px; font-size: 1rem; }
+}
+@media (max-width: 530px) {
+  .container { margin: 0; border-radius: 0; min-height: 100vh; }
+  .editor-toolbar, .editor-footer, footer { padding-left: 6px; padding-right: 6px; }
+  #noteArea { font-size: 0.95rem; }
+  header { padding: 15px 8px 6px 8px; }
+}
